@@ -26,10 +26,11 @@ function require(path, parent, orig) {
   // perform real require()
   // by invoking the module's
   // registered function
-  if (!module.exports) {
+  if (!module.resolving) {
     var mod = {};
     mod.exports = {};
     mod.client = mod.component = true;
+    module.resolving = true;
     module.call(this, mod.exports, require.relative(resolved), mod);
     module.exports = mod.exports;
   }
