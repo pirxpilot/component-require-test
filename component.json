@@ -1,0 +1,16 @@
+{
+  "name": "test-require",
+  "repo": "pirxpilot/test-require",
+  "description": "Check if require is working properly",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "a.js",
+    "b.js"
+  ]
+}
