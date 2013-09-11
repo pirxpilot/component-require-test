@@ -27,9 +27,11 @@ function require(path, parent, orig) {
   // by invoking the module's
   // registered function
   if (!module.exports) {
-    module.exports = {};
-    module.client = module.component = true;
-    module.call(this, module.exports, require.relative(resolved), module);
+    var mod = {};
+    mod.exports = {};
+    mod.client = mod.component = true;
+    module.call(this, mod.exports, require.relative(resolved), mod);
+    module.exports = mod.exports;
   }
 
   return module.exports;
